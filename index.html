@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<!-- facebook open graph tags -->
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://snize.github.io/why_drupal_Configration_Management/#/" />
+	<meta property="og:title" content="Why Drupal - Configuration Management" />
+	<meta property="og:description" content="私がDrupalを採用する理由" />
+	<meta property="og:image" content="https://snize.github.io/why_drupal_Configration_Management/img/slide.png" />
+
+	<!--- twitter card tags additive with the og: tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:domain" value="snize.github.io" />
+	<meta name="twitter:title" value="Why Drupal - Configuration Management" />
+	<meta name="twitter:description" value="私がDrupalを採用する理由" />
+	<meta name="twitter:image" content="https://snize.github.io/why_drupal_Configration_Management/img/slide.png" />
+	<meta name="twitter:url" value="https://snize.github.io/why_drupal_Configration_Management/#/" />
+	<title>Why Drupal - Configuration Management</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/snize.css">
+	<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section
+				data-markdown="slide.md"
+				data-separator="^\n\n\n"
+				data-separator-vertical="^\n\n"
+				data-separator-notes="^Note:">
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+	</script>
+</body>
+
+</html>
