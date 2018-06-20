@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f91f9dbdac508c0fe2b2a0c9210d6463",
+    "content-hash": "719604a6b643ed3671c8e3f82b8bc31c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1314,6 +1314,43 @@
                 "parser"
             ],
             "time": "2014-09-09T13:34:57+00:00"
+        },
+        {
+            "name": "drupal-composer/drupal-paranoia",
+            "version": "1.0.0-alpha2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal-composer/drupal-paranoia.git",
+                "reference": "5753730baca25afb528773e1370e306f2cee50ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal-composer/drupal-paranoia/zipball/5753730baca25afb528773e1370e306f2cee50ce",
+                "reference": "5753730baca25afb528773e1370e306f2cee50ce",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1",
+                "php": ">=5.4.5"
+            },
+            "require-dev": {
+                "composer/composer": "dev-master"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "DrupalComposer\\DrupalParanoia\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "DrupalComposer\\DrupalParanoia\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Composer Plugin for improving the security of composer-based Drupal projects by moving all PHP files out of docroot.",
+            "time": "2018-04-18T18:38:20+00:00"
         },
         {
             "name": "drupal-composer/drupal-scaffold",
