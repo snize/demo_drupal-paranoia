@@ -5,19 +5,45 @@
 kaneko@zerobase.jp<br>
 
 
+## Drupal標準の公開ディレクトリ構成
+
+
+```
+❯ tree web -L 1
+web
+├── autoload.php
+├── core
+├── index.php
+├── modules
+├── profiles
+├── robots.txt
+├── sites
+├── themes
+├── update.php
+└── web.config
+
+5 directories, 5 files
+```
+
+
 ## Drupal Paranoia
 
-[Drupal Paranoia](https://github.com/drupal-composer/drupal-paranoia)というComposerのプラグインを見つけたので試した。**利用の前提として、変更するDrupalプロジェクトが[drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project)で作成されていること。**
+Composerのプラグイン
+Note:
+**利用の前提として、変更するDrupalプロジェクトが[drupal-composer/drupal-project](https://github.com/drupal-composer/drupal-project)で作成されていること。**
 
 
 ## 何をするプラグインなのか
 
-Drupalのディレクトリ構成を変更をサポートする。具体的には**web**ディレクトリを**app**へリネーム後、**composer drupal:paranoia**を実行または、初回であれば**composer require drupal-composer/drupal-paranoia:~1**実行時にリネーム先のphpファイルを読み込むphpファイルを生成し、js, css, imagesは移動先へシンボリックリンクの生成を行う
+Drupalのディレクトリ構成を変更をサポート
+Note:
+具体的には**web**ディレクトリを**app**へリネーム後、**composer drupal:paranoia**を実行または、初回であれば**composer require drupal-composer/drupal-paranoia:~1**実行時にリネーム先のphpファイルを読み込むphpファイルを生成し、js, css, imagesは移動先へシンボリックリンクの生成を行う
 
 
 ### なぜこのプラグインを使うか
 
-ウェブ側からアクセスできる場所(docroot)にあるPHPファイルから**脆弱性を生まないようにする。**実際に[Coder](https://www.drupal.org/project/coder)というモジュールで2016年に脆弱性[SA-CONTRIB-2016-039](https://www.drupal.org/node/2765575)が発生した。
+ウェブ側からアクセスできる場所にあるファイルから**<br>脆弱性を生まないようにする。**
+Note:実際に[Coder](https://www.drupal.org/project/coder)というモジュールで2016年に脆弱性[SA-CONTRIB-2016-039](https://www.drupal.org/node/2765575)が発生した。
 
 > The module does not need to be enabled for this to be exploited. Its presence on the file system and being reachable from the web are sufficient.
 
@@ -27,13 +53,11 @@ Drupalのディレクトリ構成を変更をサポートする。具体的に�
 
 
 
-### Before
+### 変更前
 
 ```
 composer create-project drupal-composer/drupal-project:8.x-dev some-dir --stability dev --no-interaction
 ```
-
-直後の状態
 
 
 ```
@@ -73,16 +97,18 @@ web
 
 
 
-## After
+## Drupal Paranoiaで変更を加える
 
 ```
 mv web app
 composer require drupal-composer/drupal-paranoia:~1
 ```
-実行後
 
 
-webがappにリネーム。drupal paranoiaによってwebが生成
+## 実行後
+
+
+webをappにリネーム。drupal paranoiaによってwebが生成
 ```
 ❯ tree -L 1
 .
@@ -186,7 +212,7 @@ cd web && php -S localhost:8888
 
 ## まとめ
 
-今回の場合は`web(docroot)`以下が必要最小限のファイルに置き換えられ、外部のアクセスから守られる。結果としては、PHP製のウェブフレームワークのディレクトリ構造に近くなった。
+今回の場合は`web(DocumentRoot)`以下が必要最小限のファイルに置き換えられ、外部のアクセスから守られる。結果としては、PHP製のウェブフレームワークのディレクトリ構造に近くなった。
 
 - [Symfony Quick Tour: The Architecture](https://symfony.com/doc/3.4/quick_tour/the_architecture.html)
 - [Directory Structure - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.6/structure)
