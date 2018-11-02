@@ -10,53 +10,6 @@
 @import "../template/settings";
 // ---------------------------------------------
 
-
-// Include theme-specific fonts
-// @import url(../../lib/font/source-sans-pro/source-sans-pro.css);
-
-// https://qiita.com/RinoTsuka/items/4181efd43d072e246519
-@font-face{
-	font-family: "Original Yu Gothic";
-	src: local("Yu Gothic");
-	font-weight: 300;
-  }
-
-  @font-face{
-	font-family: "Original Yu Gothic";
-	src: local("Yu Gothic");
-	font-weight: 500;
-  }
-
-  @font-face{
-	font-family: "Original Yu Gothic";
-	src: local("Yu Gothic");
-	font-weight: bold;
-  }
-  @font-face {
-	font-family: "Helvetica Neue";
-	src: local("Helvetica Neue Regular");
-	font-weight: 100;
-  }
-  @font-face {
-	font-family: "Helvetica Neue";
-	src: local("Helvetica Neue Regular");
-	font-weight: 200;
-  }
-
-
-  /* IE10以上 */
-  @media all and (-ms-high-contrast: none)  {
-	html {
-	  font-family: Verdana, Meiryo, sans-serif;
-	}
-  }
-  @media all and (-ms-high-contrast: active) {
-	html {
-	  font-family: Verdana, Meiryo, sans-serif;
-	}
-  }
-
-
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #101A1B;
 $backgroundImage: linear-gradient(to right bottom, #101a1b, #2e2e0c);
@@ -65,9 +18,9 @@ $mainColor: #fff;
 $headingColor: #C7C837;
 
 $mainFontSize: 36px;
-$mainFont: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+$mainFont: source-han-sans-japanese, sans-serif;
 
-$headingFont: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Original Yu Gothic", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+$headingFont: source-han-sans-japanese, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: inherit;
